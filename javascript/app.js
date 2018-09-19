@@ -173,93 +173,93 @@ const drawPhase = () => {
 
 
 
-// PICK RANDOM CARDS TO FIGHT EACH OTHER (LATER PROMPT EGGBERT TO CHOOSE)
-// pick card from cardsDrawn and put them into
+// // PICK RANDOM CARDS TO FIGHT EACH OTHER (LATER PROMPT EGGBERT TO CHOOSE)
+// // pick card from cardsDrawn and put them into
 
-const attackPhase = () => {
+// const attackPhase = () => {
 	
-	console.log("--> ATTACK PHASE <--");
+// 	console.log("--> ATTACK PHASE <--");
 
-	// random card in play for eggbert
-	for (let i = 0; i < 1; i++) {
-		let randNum = Math.floor(Math.random() * eggbert.cardsDrawn.length);
-		eggbert.cardInPlay.push(eggbert.cardsDrawn[randNum]);
-		eggbert.cardsPastPlayed.push(eggbert.cardsDrawn[randNum]);
-		eggbert.cardsDrawn.splice(randNum, 1);
-	}
-	console.log(`${eggbert.name} put a ${eggbert.cardInPlay[0].name} (dmg: ${eggbert.cardInPlay[0].damage}) in play!`);
-	// console.log(eggbert.cardInPlay); // TEST
+// 	// random card in play for eggbert
+// 	for (let i = 0; i < 1; i++) {
+// 		let randNum = Math.floor(Math.random() * eggbert.cardsDrawn.length);
+// 		eggbert.cardInPlay.push(eggbert.cardsDrawn[randNum]);
+// 		eggbert.cardsPastPlayed.push(eggbert.cardsDrawn[randNum]);
+// 		eggbert.cardsDrawn.splice(randNum, 1);
+// 	}
+// 	console.log(`${eggbert.name} put a ${eggbert.cardInPlay[0].name} (dmg: ${eggbert.cardInPlay[0].damage}) in play!`);
+// 	// console.log(eggbert.cardInPlay); // TEST
 	
-	// random card in play for pockito
-	for (let i = 0; i < 1; i++) {
-		let randNum = Math.floor(Math.random() * pockito.cardsDrawn.length);
-		pockito.cardInPlay.push(pockito.cardsDrawn[randNum]);
-		pockito.cardsPastPlayed.push(pockito.cardsDrawn[randNum]);
-		pockito.cardsDrawn.splice(randNum, 1);
-	}
-	console.log(`${pockito.name} put a ${pockito.cardInPlay[0].name} (dmg: ${pockito.cardInPlay[0].damage}) in play!`);
-	// console.log(pockito.cardInPlay); // TEST
-}
+// 	// random card in play for pockito
+// 	for (let i = 0; i < 1; i++) {
+// 		let randNum = Math.floor(Math.random() * pockito.cardsDrawn.length);
+// 		pockito.cardInPlay.push(pockito.cardsDrawn[randNum]);
+// 		pockito.cardsPastPlayed.push(pockito.cardsDrawn[randNum]);
+// 		pockito.cardsDrawn.splice(randNum, 1);
+// 	}
+// 	console.log(`${pockito.name} put a ${pockito.cardInPlay[0].name} (dmg: ${pockito.cardInPlay[0].damage}) in play!`);
+// 	// console.log(pockito.cardInPlay); // TEST
+// }
 
-// attackPhase(); // TEST
-
-
-// DAMAGE PHASE
-// Compare damage from the two cards and give points where reward is needed!
-
-const damagePhase = () => {
-
-	if (eggbert.cardInPlay[0].damage > pockito.cardInPlay[0].damage) {
-		eggbert.roundWon++;
-		console.log(`${eggbert.name} won this round!`);
-	} else if (eggbert.cardInPlay[0].damage < pockito.cardInPlay[0].damage) {
-		pockito.roundWon++;
-		console.log(`${pockito.name} won this round!`);
-	} else {
-		console.log('It\'s a draw!');
-	}
-	// Keep track of scores:
-	console.log(`SCORE: ${eggbert.name}: ${eggbert.roundWon}, ${pockito.name}: ${pockito.roundWon}.`);
-	console.log(` `);	
-}
-
-// damagePhase(); // TEST
+// // attackPhase(); // TEST
 
 
+// // DAMAGE PHASE
+// // Compare damage from the two cards and give points where reward is needed!
 
-// INITIALIZE AND CLEANUP
+// const damagePhase = () => {
 
+// 	if (eggbert.cardInPlay[0].damage > pockito.cardInPlay[0].damage) {
+// 		eggbert.roundWon++;
+// 		console.log(`${eggbert.name} won this round!`);
+// 	} else if (eggbert.cardInPlay[0].damage < pockito.cardInPlay[0].damage) {
+// 		pockito.roundWon++;
+// 		console.log(`${pockito.name} won this round!`);
+// 	} else {
+// 		console.log('It\'s a draw!');
+// 	}
+// 	// Keep track of scores:
+// 	console.log(`SCORE: ${eggbert.name}: ${eggbert.roundWon}, ${pockito.name}: ${pockito.roundWon}.`);
+// 	console.log(` `);	
+// }
 
-const game = () => {
-
-	// GAME HAS THREE ROUNDS
-	for (let i = 1; i <= 3; i++){
-
-		console.log(`-----> ROUND ${i} <-----`);
-		// Players draw
-		drawPhase();
-		// Players chose and attack
-		attackPhase();
-		// Damage compared, points allocated
-		damagePhase();
-
-		// Players discard their hands, clean up hands (cardsDrawn) and board (cards in play)
-		eggbert.cardsDrawn = [];
-		pockito.cardsDrawn = [];
-
-		eggbert.cardInPlay = [];
-		pockito.cardInPlay = [];
-
-	}
-
-		// console.log(eggbert.cardsPastPlayed); // TEST
-		// console.log(pockito.cardsPastPlayed); // TEST
+// // damagePhase(); // TEST
 
 
-}
+
+// // INITIALIZE AND CLEANUP
 
 
-game();
+// const game = () => {
+
+// 	// GAME HAS THREE ROUNDS
+// 	for (let i = 1; i <= 3; i++){
+
+// 		console.log(`-----> ROUND ${i} <-----`);
+// 		// Players draw
+// 		drawPhase();
+// 		// Players chose and attack
+// 		attackPhase();
+// 		// Damage compared, points allocated
+// 		damagePhase();
+
+// 		// Players discard their hands, clean up hands (cardsDrawn) and board (cards in play)
+// 		eggbert.cardsDrawn = [];
+// 		pockito.cardsDrawn = [];
+
+// 		eggbert.cardInPlay = [];
+// 		pockito.cardInPlay = [];
+
+// 	}
+
+// 		// console.log(eggbert.cardsPastPlayed); // TEST
+// 		// console.log(pockito.cardsPastPlayed); // TEST
+
+
+// }
+
+
+// game();
 
 
 
