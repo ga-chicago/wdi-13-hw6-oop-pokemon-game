@@ -252,9 +252,17 @@ const game = () => {
 
 	}
 
-		// console.log(eggbert.cardsPastPlayed); // TEST
-		// console.log(pockito.cardsPastPlayed); // TEST
+	// console.log(eggbert.cardsPastPlayed); // TEST
+	// console.log(pockito.cardsPastPlayed); // TEST
 
+	// ANNOUNCE WINNER/LOSER/DRAW
+	if (eggbert.roundWon > pockito.roundWon) {
+		console.log(`${eggbert.name} won this game!`);
+	} else if (eggbert.roundWon < pockito.roundWon) {
+		console.log(`${pockito.name} won this game!`);
+	} else {
+		console.log(`This game was a draw!`);
+	}
 
 }
 
