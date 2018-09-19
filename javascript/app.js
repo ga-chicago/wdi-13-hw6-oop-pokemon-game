@@ -227,39 +227,39 @@ const damagePhase = () => {
 
 
 
-// // INITIALIZE AND CLEANUP
+// INITIALIZE AND CLEANUP
 
 
-// const game = () => {
+const game = () => {
 
-// 	// GAME HAS THREE ROUNDS
-// 	for (let i = 1; i <= 3; i++){
+	// GAME HAS THREE ROUNDS
+	for (let i = 1; i <= 3; i++){
 
-// 		console.log(`-----> ROUND ${i} <-----`);
-// 		// Players draw
-// 		drawPhase();
-// 		// Players chose and attack
-// 		attackPhase();
-// 		// Damage compared, points allocated
-// 		damagePhase();
+		console.log(`-----> ROUND ${i} <-----`);
+		// Players draw
+		drawPhase();
+		// Players chose and attack
+		attackPhase();
+		// Damage compared, points allocated
+		damagePhase();
 
-// 		// Players discard their hands, clean up hands (cardsDrawn) and board (cards in play)
-// 		eggbert.cardsDrawn = [];
-// 		pockito.cardsDrawn = [];
+		// Players discard their hands, clean up hands (cardsDrawn) and board (cards in play)
+		eggbert.cardsDrawn = [];
+		pockito.cardsDrawn = [];
 
-// 		eggbert.cardInPlay = [];
-// 		pockito.cardInPlay = [];
+		eggbert.cardInPlay = [];
+		pockito.cardInPlay = [];
 
-// 	}
+	}
 
-// 		// console.log(eggbert.cardsPastPlayed); // TEST
-// 		// console.log(pockito.cardsPastPlayed); // TEST
-
-
-// }
+		// console.log(eggbert.cardsPastPlayed); // TEST
+		// console.log(pockito.cardsPastPlayed); // TEST
 
 
-// game();
+}
+
+
+game();
 
 
 
