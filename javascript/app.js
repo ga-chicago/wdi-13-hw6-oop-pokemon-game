@@ -173,33 +173,33 @@ const drawPhase = () => {
 
 
 
-// // PICK RANDOM CARDS TO FIGHT EACH OTHER (LATER PROMPT EGGBERT TO CHOOSE)
-// // pick card from cardsDrawn and put them into
+// PICK RANDOM CARDS TO FIGHT EACH OTHER (LATER PROMPT EGGBERT TO CHOOSE)
+// pick card from cardsDrawn and put them into
 
-// const attackPhase = () => {
+const attackPhase = () => {
 	
-// 	console.log("--> ATTACK PHASE <--");
+	console.log("--> ATTACK PHASE <--");
 
-// 	// random card in play for eggbert
-// 	for (let i = 0; i < 1; i++) {
-// 		let randNum = Math.floor(Math.random() * eggbert.cardsDrawn.length);
-// 		eggbert.cardInPlay.push(eggbert.cardsDrawn[randNum]);
-// 		eggbert.cardsPastPlayed.push(eggbert.cardsDrawn[randNum]);
-// 		eggbert.cardsDrawn.splice(randNum, 1);
-// 	}
-// 	console.log(`${eggbert.name} put a ${eggbert.cardInPlay[0].name} (dmg: ${eggbert.cardInPlay[0].damage}) in play!`);
-// 	// console.log(eggbert.cardInPlay); // TEST
+	// random card in play for eggbert
+	for (let i = 0; i < 1; i++) {
+		let randNum = Math.floor(Math.random() * eggbert.cardsDrawn.length);
+		eggbert.cardInPlay.push(eggbert.cardsDrawn[randNum]);
+		eggbert.cardsPastPlayed.push(eggbert.cardsDrawn[randNum]);
+		eggbert.cardsDrawn.splice(randNum, 1);
+	}
+	console.log(`${eggbert.name} put a ${eggbert.cardInPlay[0].name} (dmg: ${eggbert.cardInPlay[0].damage}) in play!`);
+	// console.log(eggbert.cardInPlay); // TEST
 	
-// 	// random card in play for pockito
-// 	for (let i = 0; i < 1; i++) {
-// 		let randNum = Math.floor(Math.random() * pockito.cardsDrawn.length);
-// 		pockito.cardInPlay.push(pockito.cardsDrawn[randNum]);
-// 		pockito.cardsPastPlayed.push(pockito.cardsDrawn[randNum]);
-// 		pockito.cardsDrawn.splice(randNum, 1);
-// 	}
-// 	console.log(`${pockito.name} put a ${pockito.cardInPlay[0].name} (dmg: ${pockito.cardInPlay[0].damage}) in play!`);
-// 	// console.log(pockito.cardInPlay); // TEST
-// }
+	// random card in play for pockito
+	for (let i = 0; i < 1; i++) {
+		let randNum = Math.floor(Math.random() * pockito.cardsDrawn.length);
+		pockito.cardInPlay.push(pockito.cardsDrawn[randNum]);
+		pockito.cardsPastPlayed.push(pockito.cardsDrawn[randNum]);
+		pockito.cardsDrawn.splice(randNum, 1);
+	}
+	console.log(`${pockito.name} put a ${pockito.cardInPlay[0].name} (dmg: ${pockito.cardInPlay[0].damage}) in play!`);
+	// console.log(pockito.cardInPlay); // TEST
+}
 
 // // attackPhase(); // TEST
 
