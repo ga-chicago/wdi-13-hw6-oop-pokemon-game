@@ -204,24 +204,24 @@ const attackPhase = () => {
 // // attackPhase(); // TEST
 
 
-// // DAMAGE PHASE
-// // Compare damage from the two cards and give points where reward is needed!
+// DAMAGE PHASE
+// Compare damage from the two cards and give points where reward is needed!
 
-// const damagePhase = () => {
+const damagePhase = () => {
 
-// 	if (eggbert.cardInPlay[0].damage > pockito.cardInPlay[0].damage) {
-// 		eggbert.roundWon++;
-// 		console.log(`${eggbert.name} won this round!`);
-// 	} else if (eggbert.cardInPlay[0].damage < pockito.cardInPlay[0].damage) {
-// 		pockito.roundWon++;
-// 		console.log(`${pockito.name} won this round!`);
-// 	} else {
-// 		console.log('It\'s a draw!');
-// 	}
-// 	// Keep track of scores:
-// 	console.log(`SCORE: ${eggbert.name}: ${eggbert.roundWon}, ${pockito.name}: ${pockito.roundWon}.`);
-// 	console.log(` `);	
-// }
+	if (eggbert.cardInPlay[0].damage > pockito.cardInPlay[0].damage) {
+		eggbert.roundWon++;
+		console.log(`${eggbert.name} won this round!`);
+	} else if (eggbert.cardInPlay[0].damage < pockito.cardInPlay[0].damage) {
+		pockito.roundWon++;
+		console.log(`${pockito.name} won this round!`);
+	} else {
+		console.log('It\'s a draw!');
+	}
+	// Keep track of scores:
+	console.log(`SCORE: ${eggbert.name}: ${eggbert.roundWon}, ${pockito.name}: ${pockito.roundWon}.`);
+	console.log(` `);	
+}
 
 // // damagePhase(); // TEST
 
