@@ -152,7 +152,7 @@ const drawPhase = () => {
 		eggbert.cardsDrawn.push(deck[randNum]);
 		deck.splice(randNum, 1);
 	}
-	console.log(`${eggbert.name} has drawn a ${eggbert.cardsDrawn[0].name} (dmg: ${eggbert.cardsDrawn[0].damage}), a ${eggbert.cardsDrawn[1].name} (dmg: ${eggbert.cardsDrawn[1].damage}), and a ${eggbert.cardsDrawn[2].name} (dmg: ${eggbert.cardsDrawn[2].damage}).`);
+	console.log(`${eggbert.name} has drawn ${eggbert.cardsDrawn[0].name} (dmg: ${eggbert.cardsDrawn[0].damage}), ${eggbert.cardsDrawn[1].name} (dmg: ${eggbert.cardsDrawn[1].damage}), and ${eggbert.cardsDrawn[2].name} (dmg: ${eggbert.cardsDrawn[2].damage}).`);
 	// console.log(eggbert.cardsDrawn); // TEST
 
 	// Loop2 for pockito
@@ -162,7 +162,7 @@ const drawPhase = () => {
 		deck.splice(randNum, 1);
 
 	}
-	console.log(`${pockito.name} has drawn a ${pockito.cardsDrawn[0].name} (dmg: ${pockito.cardsDrawn[0].damage}), a ${pockito.cardsDrawn[1].name} (dmg: ${pockito.cardsDrawn[1].damage}), and a ${pockito.cardsDrawn[2].name} (dmg: ${pockito.cardsDrawn[2].damage}).`);
+	console.log(`${pockito.name} has drawn ${pockito.cardsDrawn[0].name} (dmg: ${pockito.cardsDrawn[0].damage}), ${pockito.cardsDrawn[1].name} (dmg: ${pockito.cardsDrawn[1].damage}), and ${pockito.cardsDrawn[2].name} (dmg: ${pockito.cardsDrawn[2].damage}).`);
 	// console.log(pockito.cardsDrawn); // TEST
 
 	// PUT CARDS IN HAND
@@ -180,16 +180,39 @@ const attackPhase = () => {
 	
 	console.log("--> ATTACK PHASE <--");
 
-	// random card in play for eggbert
-	for (let i = 0; i < 1; i++) {
-		let randNum = Math.floor(Math.random() * eggbert.cardsDrawn.length);
-		eggbert.cardInPlay.push(eggbert.cardsDrawn[randNum]);
-		eggbert.cardsPastPlayed.push(eggbert.cardsDrawn[randNum]);
-		eggbert.cardsDrawn.splice(randNum, 1);
+	// // random card in play for eggbert
+	// for (let i = 0; i < 1; i++) {
+	// 	let randNum = Math.floor(Math.random() * eggbert.cardsDrawn.length);
+	// 	eggbert.cardInPlay.push(eggbert.cardsDrawn[randNum]);
+	// 	eggbert.cardsPastPlayed.push(eggbert.cardsDrawn[randNum]);
+	// 	eggbert.cardsDrawn.splice(randNum, 1);
+	// }
+	// console.log(`${eggbert.name} put a ${eggbert.cardInPlay[0].name} (dmg: ${eggbert.cardInPlay[0].damage}) in play!`);
+	// // console.log(eggbert.cardInPlay); // TEST
+
+	// // ^^ becomes vv
+
+	// TRY TO PROMPT EGGBERT TO CHOOSE
+	let askEgg = prompt(`${eggbert.name} has drawn three cards!\nShould he play:\n1: ${eggbert.cardsDrawn[0].name} (dmg: ${eggbert.cardsDrawn[0].damage})?\n2: ${eggbert.cardsDrawn[1].name} (dmg: ${eggbert.cardsDrawn[1].damage})?\n3: ${eggbert.cardsDrawn[2].name} (dmg: ${eggbert.cardsDrawn[2].damage})?\n(Input number and press Enter)`)
+
+	if (askEgg == "1") {
+		eggbert.cardInPlay.push(eggbert.cardsDrawn[0]);
+		eggbert.cardsPastPlayed.push(eggbert.cardsDrawn[0]);
+		eggbert.cardsDrawn.splice(0, 1);
+	} else if (askEgg == "2") {
+		eggbert.cardInPlay.push(eggbert.cardsDrawn[1]);
+		eggbert.cardsPastPlayed.push(eggbert.cardsDrawn[1]);
+		eggbert.cardsDrawn.splice(1, 1);
+	} else if (askEgg == "3") {
+		eggbert.cardInPlay.push(eggbert.cardsDrawn[2]);
+		eggbert.cardsPastPlayed.push(eggbert.cardsDrawn[2]);
+		eggbert.cardsDrawn.splice(2, 1);
+	} else {
+		alert(`Sure you picked 1, 2, or 3 there❓`)
 	}
 	console.log(`${eggbert.name} put a ${eggbert.cardInPlay[0].name} (dmg: ${eggbert.cardInPlay[0].damage}) in play!`);
-	// console.log(eggbert.cardInPlay); // TEST
-	
+
+
 	// random card in play for pockito
 	for (let i = 0; i < 1; i++) {
 		let randNum = Math.floor(Math.random() * pockito.cardsDrawn.length);
@@ -266,8 +289,8 @@ const game = () => {
 
 }
 
-
 game();
+
 
 
 
