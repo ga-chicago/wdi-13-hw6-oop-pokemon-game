@@ -31,6 +31,7 @@ const pPlayCard =() => {
 		let pPlayCard = player.pCards[pCardIndex]
 		player.pCards.splice(pCardIndex, 1)
 		player.pPlayedCards.push(pPlayCard)
+		console.log(`${player.name} has played ${pPlayCard.name} `);
 		return pPlayCard;
 	}
 const cPlayCard = () => {
@@ -40,6 +41,7 @@ const cPlayCard = () => {
 		let cPlayCard = computer.cCards[cCardIndex]
 		computer.cCards.splice(cCardIndex, 1)
 		computer.cPlayedCards.push(cPlayCard)
+		console.log(`${computer.name} has played ${cPlayCard.name}`);
 		return cPlayCard
 	}
 
@@ -151,7 +153,7 @@ const clearCards = () => {
 
 const determineWinner = () =>{
 	if(player.pPoints === computer.cPoints){
-		console.log("It's a tie! Sorry not sorr!");
+		console.log("It's a tie! Sorry not sorry!");
 	} else if (player.pPoints > computer.cPoints) {
 		console.log(player.name + " has defeated the evil computer!!");
 	} else {
@@ -164,12 +166,14 @@ const determineWinner = () =>{
 	// and how many the computer has
 	// Whoever has the most wins after three rounds wins
 const gameFunction = () => {
-	for(let i = 0; i < 3; i++){
+	for(let i = 1; i < 4; i++){
+		console.log(` ********* Round ${i} ********* `);
 		dealCards();
 		pPlayCard();
 		cPlayCard();
 		andFight();
 		clearCards();
+		console.log(`${player.name} has ${player.pPoints}! ${computer.name} has ${computer.cPoints}`);
 	}
 	determineWinner();
 }
