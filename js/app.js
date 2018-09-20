@@ -21,6 +21,7 @@ const computer = {
 	cPoints: 0,
 	cCards: [],
 	cPlayedCards: [],
+	cDiscardPile: [],
 }
 
 // I will need to track what cards are in play and what cards have been used, 
@@ -148,6 +149,11 @@ const clearCards = () => {
 	player.pPlayedCards.pop();
 	for(let i = 0; i <= player.pCards.length; i++){
 		player.pCards.pop()
+	}
+	computer.cDiscardPile.push(computer.cPlayedCards);
+	computer.cPlayedCards.pop();
+	for(let i = 0; i <= computer.cCards.length; i++){
+		computer.cCards.pop()
 	}
 }
 
