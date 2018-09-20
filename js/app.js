@@ -121,6 +121,8 @@ const dealCards = () => {
 		deck.splice(index2, 1)
 		computer.cCards.push(card2);
 		}
+		console.log(`${player.name} was dealt ${player.pCards[0].name}, ${player.pCards[1].name}, and ${player.pCards[2].name}!`)
+		console.log(`${computer.name} was dealt ${computer.cCards[0].name}, ${computer.cCards[1].name}, and ${computer.cCards[2].name}!`)
 	}
 
 const andFight = () => {
@@ -136,7 +138,7 @@ const andFight = () => {
 		console.log(computer.name + "'s " + computer.cPlayedCards[0].name + " has defeated " + player.pPlayedCards[0].name + "!")
 		console.log(computer.name + " has earned " + computer.cPoints + "!");
 	}
-	console.log(player.pPoints)
+	// console.log(player.pPoints)
 }
 
 const clearCards = () => {
